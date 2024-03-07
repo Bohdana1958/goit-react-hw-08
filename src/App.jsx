@@ -1,13 +1,10 @@
-import { SearchBox } from './components/SearchBox/SearchBox';
-import { ContactList } from './components/ContactList/ContactList';
-import { ContactForm } from './components/ContactForm/ContactForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContact } from './redux/operations';
 import { selectIsError, selectIsLoading } from './redux/selectors';
 import { AppBar } from './components/AppBar/AppBar';
 import { useAuth } from './hook/useAuth';
 import { refreshUser } from './redux/auth/operationAuth';
+import { ContactPage } from './pages/Contacts/ContactsPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -16,7 +13,6 @@ export const App = () => {
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchContact());
     dispatch(refreshUser());
   }, [dispatch]);
 
@@ -25,10 +21,7 @@ export const App = () => {
   ) : (
     <div>
       <AppBar />
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
+      <ContactPage />
       {loading && !error && <b>Request in progress...</b>}
     </div>
   );
