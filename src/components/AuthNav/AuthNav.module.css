@@ -1,0 +1,21 @@
+.nav {
+  border-bottom: 2px solid orange;
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: orange;
+}
