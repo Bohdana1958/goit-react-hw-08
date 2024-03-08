@@ -9,7 +9,6 @@ const buildLinkClass = ({ isActive }) => {
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
-  console.log(isLoggedIn);
 
   return (
     <nav className={css.nav}>

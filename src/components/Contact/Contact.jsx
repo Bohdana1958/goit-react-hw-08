@@ -5,12 +5,12 @@ import css from '../ContactList/ContactList.module.css';
 export const Contact = ({ item, onDelete }) => {
   return (
     <li key={item.id} className={css.listItem}>
-      <div>
-        <p>
+      <div className={css.wrapper}>
+        <p className={css.text}>
           <IoPersonSharp className={css.icon} />
           {item.name}
         </p>
-        <p>
+        <p className={css.text}>
           <FaPhone className={css.icon} />
           {item.number}
         </p>
