@@ -9,8 +9,8 @@ export const ContactList = () => {
   const items = useSelector(selectItems);
   const filterValue = useSelector(selectFilter);
 
-  const filteredItems = items.filter(
-    item => item && item.name && item.name.toLowerCase().includes(filterValue.toLowerCase())
+  const filteredItems = items.filter(item =>
+    item.name.toLowerCase().includes(filterValue.toLowerCase())
   );
 
   const deleteUsers = id => {
