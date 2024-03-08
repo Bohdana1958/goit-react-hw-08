@@ -8,27 +8,27 @@ import { addContact } from '../../redux/operations';
 
 const userSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  phone: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
+  number: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
 });
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const nameId = useId();
-  const phoneId = useId();
+  const numberId = useId();
 
   return (
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={userSchema}
       onSubmit={(values, actions) => {
         const contacts = {
           id: nanoid(),
           name: values.name,
-          phone: values.phone,
+          number: values.number,
         };
         dispatch(addContact(contacts));
 
@@ -44,11 +44,11 @@ export const ContactForm = () => {
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formGroup}>
-          <label className={css.label} htmlFor={phoneId}>
-            Phone:
+          <label className={css.label} htmlFor={numberId}>
+            Number:
           </label>
-          <Field className={css.input} type="text" name="phone" id={phoneId} />
-          <ErrorMessage className={css.error} name="phone" component="span" />
+          <Field className={css.input} type="text" name="number" id={numberId} />
+          <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <button className={css.button} type="submit">
           Add User

@@ -12,7 +12,7 @@ export const Contact = ({ item, onDelete }) => {
         </p>
         <p>
           <FaPhone className={css.icon} />
-          {item.phone}
+          {item.number}
         </p>
       </div>
       <button className={css.delete} onClick={() => onDelete(item.id)}>

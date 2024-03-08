@@ -5,7 +5,7 @@ import { fetchContact } from '../../redux/operations';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-export const ContactPage = () => {
+export const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
